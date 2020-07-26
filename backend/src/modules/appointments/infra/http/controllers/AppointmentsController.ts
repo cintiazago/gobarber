@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { parseISO } from 'date-fns';
 import { container } from 'tsyringe';
 
-import CreateAppoitnmentService from '@modules/appointments/services/CreateAppointmentService';
+import CreateAppoitnmentService from '@modules/appointments/services/CreateAppointmentsService';
 
 export default class AppointmentsController {
     public async create(
