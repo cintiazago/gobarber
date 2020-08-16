@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.734.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.2.0",
     "class-transformer": "^0.3.1",
