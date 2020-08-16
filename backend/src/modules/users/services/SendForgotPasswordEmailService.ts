@@ -3,8 +3,11 @@ import path from 'path';
 
 import AppError from '@shared/errors/AppError';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
-import IUserRepository from '../repositories/IUsersRepositories';
+
+import IUsersRepository from '../repositories/IUsersRepositories';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
+
+// import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
     email: string;
@@ -14,23 +17,23 @@ interface IRequest {
 class SendForgotPasswordEmailService {
     constructor(
         @inject('UsersRepository')
-        private usersRepository: IUserRepository,
+        private usersRepository: IUsersRepository,
 
         @inject('MailProvider')
         private mailProvider: IMailProvider,
 
         @inject('UserTokensRepository')
-        private userTokenRepository: IUserTokensRepository,
+        private userTokensRepository: IUserTokensRepository,
     ) {}
 
     public async execute({ email }: IRequest): Promise<void> {
         const user = await this.usersRepository.findByEmail(email);
 
         if (!user) {
-            throw new AppError('User does not exists.');
+            throw new AppError('User does not exists');
         }
 
-        const { token } = await this.userTokenRepository.generate(user.id);
+        const { token } = await this.userTokensRepository.generate(user.id);
 
         const forgotPasswordTemplate = path.resolve(
             __dirname,
@@ -49,7 +52,7 @@ class SendForgotPasswordEmailService {
                 file: forgotPasswordTemplate,
                 variables: {
                     name: user.name,
-                    link: `${process.env.APP_WEB_URL}/reset_password?token=${token}`,
+                    link: `${process.env.APP_WEB_URL}/reset-password?token=${token}`,
                 },
             },
         });
