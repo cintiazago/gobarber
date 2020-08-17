@@ -9,7 +9,7 @@ import UserAvatarController from '../controllers/UserAvatarController';
 import enruseAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 const userAvatarController = new UserAvatarController();
 const usersController = new UsersController();
 
