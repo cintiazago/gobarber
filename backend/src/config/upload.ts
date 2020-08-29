@@ -18,6 +18,7 @@ interface IUploadConfig {
         disk: {};
         aws: {
             bucket: string;
+            use_local: boolean;
         };
     };
 }
@@ -44,6 +45,7 @@ export default {
         disk: {},
         aws: {
             bucket: 'app-gobarber',
+            use_local: process.env.APP_ENVIRONMENT !== 'production',
         },
     },
 } as IUploadConfig;

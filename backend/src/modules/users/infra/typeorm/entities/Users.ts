@@ -44,7 +44,9 @@ class User {
             case 'disk':
                 return `${process.env.APP_API_URL}/files/${this.avatar}`;
             case 's3':
-                return `https://${uploadConfig.config.aws.bucket}.s3.amazonaws.com/${this.avatar}`;
+                return process.env.ENVIRONMENT === 'production'
+                    ? `https://${uploadConfig.config.aws.bucket}.s3.amazonaws.com/${this.avatar}`
+                    : `http://localhost:4572/${uploadConfig.config.aws.bucket}/${this.avatar}`;
             default:
                 return null;
         }
