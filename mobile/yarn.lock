@@ -1195,9 +1195,9 @@
     nanoid "^3.1.9"
 
 "@react-navigation/stack@^5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.7.0.tgz#ba8d86919554c9c758e79493b0c828e10faec5d2"
-  integrity sha512-56Q83c5jjVyge++3FjVrvO3QvXyt5LJjFq8txE+qyvdJ4C+oK0b7vQ70ZP5fhXAUCgSvYnHAcV/DVBFz3kiDsg==
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.9.0.tgz#bf24607175bf502798cc4c832aa8a86e55f3b365"
+  integrity sha512-kt6M0ZLMyNKXfKi50n01bHg4/d8zp0Yh5QaQG4d1roWOqdV9ou1nFEK4l2yQ6XKH2lLSYswHElPDZUuWd+6XzA==
   dependencies:
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
@@ -6177,9 +6177,9 @@ react-native-vector-icons@^7.0.0:
     yargs "^15.0.2"
 
 react-native-windows@^0.62.0-0:
-  version "0.62.6"
-  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.62.6.tgz#a5bcd10ac4cae6ca5e63bff9b4b3368fd172770f"
-  integrity sha512-vVWS5Sp+uh2+yFz4qR0kz3dExe4HZzsrThGtD3nMzfSJuVEJAFADGIyUOTrTEBrhZGqYbseU2Rs9UHNHSWGgAg==
+  version "0.62.7"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.62.7.tgz#f527b2a42a869b0d80af1fbb6d55051904253175"
+  integrity sha512-Y46FUBSwBh3rfLD7lTlshb9P040V3ZaBpm2MrB6UziE3YnXK4NwvcdpmQd3LJZWMjUvklSJBzU1z34xTB1yETQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
     cli-spinners "^2.2.0"

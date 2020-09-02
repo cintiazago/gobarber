@@ -9,7 +9,6 @@ class DiskStorageProvider implements IStorageProvider {
     private client: S3;
 
     constructor() {
-        console.log(uploadConfig.config.aws.use_local);
         this.client = new aws.S3({
             region: 'us-east-1',
             endpoint: uploadConfig.config.aws.use_local

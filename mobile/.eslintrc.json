@@ -38,6 +38,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "prettier/prettier": "error",
     "@typescript-eslint/camelcase": "off",
+    "camelcase": "off",
+    "imports/no-duplicates": "off",
     "react/jsx-filename-extension": [
       1,
       {
