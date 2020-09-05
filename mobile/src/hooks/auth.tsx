@@ -6,7 +6,6 @@ import React, {
   useEffect,
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-
 import api from '../services/api';
 
 interface User {
@@ -15,28 +14,25 @@ interface User {
   email: string;
   avatar_url: string;
 }
-
 interface AuthState {
   token: string;
   user: User;
 }
-
 interface SignInCredentials {
   email: string;
   password: string;
 }
-
 interface AuthContextData {
   user: User;
-  loading: boolean;
   signIn(credentials: SignInCredentials): Promise<void>;
+  loading: boolean;
   signOut(): void;
   updateUser(user: User): Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>({} as AuthState);
   const [loading, setLoading] = useState(true);
 
@@ -48,7 +44,7 @@ const AuthProvider: React.FC = ({ children }) => {
       ]);
 
       if (token[1] && user[1]) {
-        api.defaults.headers.authorization = `Baerer ${token[1]}`;
+        api.defaults.headers.authorization = `Bearer ${token[1]}`;
 
         setData({ token: token[1], user: JSON.parse(user[1]) });
       }
@@ -72,7 +68,7 @@ const AuthProvider: React.FC = ({ children }) => {
       ['@GoBarber:user', JSON.stringify(user)],
     ]);
 
-    api.defaults.headers.authorization = `Baerer ${token}`;
+    api.defaults.headers.authorization = `Bearer ${token}`;
 
     setData({ token, user });
   }, []);
@@ -97,14 +93,14 @@ const AuthProvider: React.FC = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user: data.user, signIn, signOut, updateUser, loading }}
+      value={{ user: data.user, signIn, signOut, loading, updateUser }}
     >
       {children}
     </AuthContext.Provider>
   );
 };
 
-function useAuth(): AuthContextData {
+export function useAuth(): AuthContextData {
   const context = useContext(AuthContext);
 
   if (!context) {
@@ -113,5 +109,3 @@ function useAuth(): AuthContextData {
 
   return context;
 }
-
-export { AuthProvider, useAuth };

@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-
-import { useNavigation, useRoute } from '@react-navigation/native';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+
+import { useNavigation, useRoute } from '@react-navigation/native';
 import {
   Container,
   Title,
@@ -24,7 +24,11 @@ const AppointmentCreated: React.FC = () => {
 
   const handleOkPressed = useCallback(() => {
     reset({
-      routes: [{ name: 'Dashboard' }],
+      routes: [
+        {
+          name: 'Dashboard',
+        },
+      ],
       index: 0,
     });
   }, [reset]);
@@ -32,7 +36,7 @@ const AppointmentCreated: React.FC = () => {
   const formattedDate = useMemo(() => {
     return format(
       routeParams.date,
-      "EEEE', dia' dd 'de' MMMM 'de' yyyy 'às' HH:MM'h",
+      "EEEE', dia' dd 'de' MMMM 'de' yyyy 'às' HH:mm'h' ",
       { locale: ptBR },
     );
   }, [routeParams.date]);

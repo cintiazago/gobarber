@@ -1,10 +1,9 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useCallback, useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 
 import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../../hooks/auth';
-
-import api from '../../services/api';
 
 import {
   Container,
@@ -14,14 +13,15 @@ import {
   ProfileButton,
   UserAvatar,
   ProvidersList,
-  ProvidersListTitle,
   ProviderContainer,
   ProviderAvatar,
   ProviderInfo,
   ProviderName,
   ProviderMeta,
   ProviderMetaText,
+  ProvidersListTitle,
 } from './styles';
+import api from '../../services/api';
 
 export interface Provider {
   id: string;
@@ -31,7 +31,6 @@ export interface Provider {
 
 const Dashboard: React.FC = () => {
   const [providers, setProviders] = useState<Provider[]>([]);
-
   const { user } = useAuth();
   const { navigate } = useNavigation();
 
@@ -56,8 +55,7 @@ const Dashboard: React.FC = () => {
     <Container>
       <Header>
         <HeaderTitle>
-          Bem-vindo,
-          {'\n'}
+          Bem Vindo, {'\n'}
           <UserName>{user.name}</UserName>
         </HeaderTitle>
 
@@ -83,7 +81,7 @@ const Dashboard: React.FC = () => {
 
               <ProviderMeta>
                 <Icon name="calendar" size={14} color="#ff9000" />
-                <ProviderMetaText>Segunda à Sexta</ProviderMetaText>
+                <ProviderMetaText>Segunda à sexta</ProviderMetaText>
               </ProviderMeta>
 
               <ProviderMeta>

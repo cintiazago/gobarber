@@ -1,16 +1,16 @@
 import React, { useCallback, useRef } from 'react';
 import {
   Image,
+  View,
   KeyboardAvoidingView,
   Platform,
-  View,
   ScrollView,
   TextInput,
   Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import * as Yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
+import * as Yup from 'yup';
 
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
@@ -41,7 +41,7 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
-  const naviagtion = useNavigation();
+  const navigation = useNavigation();
 
   const { signIn } = useAuth();
 
@@ -49,10 +49,11 @@ const SignIn: React.FC = () => {
     async (data: SignInFormData) => {
       try {
         formRef.current?.setErrors({});
+
         const schema = Yup.object().shape({
           email: Yup.string()
             .required('E-mail obrigatório')
-            .email('Digite um email válido'),
+            .email('Digite um e-mail valido'),
           password: Yup.string().required('Senha obrigatória'),
         });
 
@@ -74,8 +75,8 @@ const SignIn: React.FC = () => {
         }
 
         Alert.alert(
-          'Erro na autenticação',
-          'Ocorreu um erro ao fazer login, cheque as credenciais',
+          'Error na autenticação',
+          'Ocorreu um erro ao fazer o login, cheque as credenciais',
         );
       }
     },
@@ -97,7 +98,7 @@ const SignIn: React.FC = () => {
             <Image source={logoImg} />
 
             <View>
-              <Title>Faça seu login</Title>
+              <Title>Faça seu Logon</Title>
             </View>
 
             <Form ref={formRef} onSubmit={handleSignIn}>
@@ -113,7 +114,6 @@ const SignIn: React.FC = () => {
                   passwordInputRef.current?.focus();
                 }}
               />
-
               <Input
                 ref={passwordInputRef}
                 name="password"
@@ -134,10 +134,9 @@ const SignIn: React.FC = () => {
                 Entrar
               </Button>
             </Form>
-
             <ForgotPassword
               onPress={() => {
-                console.log;
+                console.log('deu');
               }}
             >
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
@@ -146,9 +145,9 @@ const SignIn: React.FC = () => {
         </ScrollView>
       </KeyboardAvoidingView>
 
-      <CreateAccountButton onPress={() => naviagtion.navigate('SignUp')}>
-        <Icon name="log-in" size={20} color="#ff9000" />
-        <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
+      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+        <Icon name="log-in" size={20} color="#FF9000" />
+        <CreateAccountButtonText>Criar uma Conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
   );
