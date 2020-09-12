@@ -81,6 +81,9 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
 - Ter [**Git**](https://git-scm.com/) para clonar o projeto.
 - Ter [**Node.js**](https://nodejs.org/en/) instalado.
 - Ter [**Docker**](https://www.docker.com/) rodando um container PostgreSQL.
+- Ter [**MongoDB**](https://www.monogdb.com/) rodando em um container docker.
+- Ter [**Redis**](https://redis.io/documentation) rodando em um container.
+
 - Um dispositivo ou emulador iOS ou Android
 
 ## :rocket: Começando
@@ -95,6 +98,10 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
 
 ## :gear: Iniciando back-end
 
+Configurar os dados do MongoDB, Postgres e Redis no arquivo ormconfig.json (criar este arquivo na pasta raíz do backend, a partir o arquivo exemplo)
+
+ Criar e configurar o arquivo de variáveis de ambiente .env na raíz do backend a partir do arquivo exemplo.
+ 
 ```bash
   # Entrar no diretório do back-end:
   $ cd backend
@@ -105,12 +112,12 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
   # Rodar as migrations:
   $ yarn typeorm migration:run
 
-  # Rodar a aplicação:
+    # Rodar a aplicação:
   $ yarn dev:server
 
   # O servidor inciará na porta:3333 - acesse http://localhost:3333
 ```
-
+ 
 ## :computer: Iniciando front-end
 
 ```bash
