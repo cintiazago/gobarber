@@ -55,12 +55,24 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
 <table>
   <tr>
     <td colspan="2"><h4 align="center">Desktop</h4> </td>
-    <td colspan="2"><h4 align="center">Mobile</h4></td>
+    <td colspan="3"><h4 align="center">Mobile</h4></td>
   </tr>
   <tr>
-    <td><img src=".github/Logon-web.png" width=300 /></td><td><img src=".github/Home-web.png" width=300 /></td>
-    <td><img src=".github/Logon-mobile.png" width=180 /></td><td><img src=".github/Lista-mobile.png" width=180 /></td>
-    <td><img src=".github/Agendamento-mobile.png" width=180 /></td>
+    <td>
+      <img src=".github/Logon-web.png" width=300 />
+    </td>
+    <td>
+      <img src=".github/Home-web.png" width=300 />
+    </td>
+    <td>
+      <img src=".github/Logon-mobile.png" width=180 />
+    </td>
+    <td>
+      <img src=".github/Lista-mobile.png" width=180 />
+    </td>
+    <td>
+      <img src=".github/Agendamento-mobile.png" width=180 />
+    </td>
   </tr>
 </table>
 
