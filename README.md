@@ -34,23 +34,23 @@
   </a>
   </p>
 
-## :page_with_curl: Sobre
+## :page_with_curl: About
 
-Este repositório contém um API REST em Node.js como back-end, uma aplicação em ReactJS como front-end e um app mobile em React Native, todos utilizando TypeScript.
+This repository contain a Node.js API REST in the backend, a ReactJS application in the frontend and a React Native mobile app, using Typescript.
 
-Essa é a aplicação GoBarber, que é uma plataforma de agendamento de serviços para proprietários de barbearias ou salões de beleza. Nessa aplicação o usuário consegue ter acesso a todos os prostadores de serviços cadastrados através de um aplicativo mobile, com isso usuário consegue escolher um prestador para marcar seu agendamento.
+This is the GoBarber application, which is a service scheduling platform for owners of barbershops or beauty salons. In this application, the user can access all registered service providers through a mobile application, with which the user can choose a provider to book their appointment.
 
-Já o prestador de serviço, através de um interface Web, consegue ter acesso a todos os seus horários, podendo ver todos os que estão ocupados quanto os que estão disponíveis.
+The service provider, through a web interface, is able to have access to all their schedules, being able to see all those who are busy as well as those that are available.
 
-**Node.js**: é uma API REST que faz todo o CRUD da aplicação, persistência de dados, tratativa de exceções e que serve dados tanto ao front-end quanto ao mobile.
+** Node.js **: it is a REST API that does all the CRUD of the application, data persistence, exception handling and that serves data for both the front-end and the mobile.
 
-**ReactJS**: é uma página Web no qual o prestador de serviço tem acesso a todo o seu calendário de agendamentos.
+** ReactJS **: it is a web page on which the service provider has access to the entire schedule of appointments.
 
-**React Native**: é um aplicativo em que o usuário tem acesso a todos os prestadores de serviço cadastrados no App, com isso ele pode fazer um agendamento que o prestador de preferência.
+** React Native **: is an application in which the user has access to all service providers registered in the App, with this he can make an appointment that the provider of choice.
 
 ## 🎨 Layout
 
-Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
+Design made by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
 
 <table>
   <tr>
@@ -76,77 +76,76 @@ Design feito por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/
   </tr>
 </table>
 
-## :books: Requisitos
+## :books: Requirements
 
-- Ter [**Git**](https://git-scm.com/) para clonar o projeto.
-- Ter [**Node.js**](https://nodejs.org/en/) instalado.
-- Ter [**Docker**](https://www.docker.com/) rodando um container PostgreSQL.
-- Ter [**MongoDB**](https://www.monogdb.com/) rodando em um container docker.
-- Ter [**Redis**](https://redis.io/documentation) rodando em um container.
+- [**Git**](https://git-scm.com/)
+- [**Node.js**](https://nodejs.org/en/)
+- [**Docker**](https://www.docker.com/) running a PostgreSQL container.
+- [**MongoDB**](https://www.monogdb.com/) running on a container.
+- [**Redis**](https://redis.io/documentation) running on a container.
 
-- Um dispositivo ou emulador iOS ou Android
+- A device or an iOS or Android emulador.
 
-## :rocket: Começando
+## :rocket: Getting started
 
 ```bash
-  # Clonar o projeto:
+  # Clone the project:
   $ git clone https://github.com/cintiazago/gobarber
-
-  # Entrar no diretório:
+ 
   $ cd cintiazago/gobarber
 ```
 
-## :gear: Iniciando back-end
+## :gear: Starting the backend
 
-Configurar os dados do MongoDB, Postgres e Redis no arquivo ormconfig.json (criar este arquivo na pasta raíz do backend, a partir o arquivo exemplo)
+Configure MongoDB, Postgres and Redis on the ormconfig.json file (create this file on the root directory of the backend project, using the example file)
 
- Criar e configurar o arquivo de variáveis de ambiente .env na raíz do backend a partir do arquivo exemplo.
+Create and configure the .env file on the root directory of the backend project using the example file.
  
 ```bash
-  # Entrar no diretório do back-end:
+  # Change to backend directory:
   $ cd backend
 
-  # Instalar as dependências:
+  # Install dependencies:
   $ yarn
 
-  # Rodar as migrations:
+  # Run the migrations:
   $ yarn typeorm migration:run
 
-    # Rodar a aplicação:
+  # Run the application:
   $ yarn dev:server
 
-  # O servidor inciará na porta:3333 - acesse http://localhost:3333
+  # The server will start at port 3333 - access http://localhost:3333
 ```
  
-## :computer: Iniciando front-end
+## :computer: Starting the frontend
 
 ```bash
-  # Entrar no diretório do front-end:
+  # Change to frontend directory:
   $ cd web
 
-  # Instalar as dependências:
+  # Install dependencies:
   $ yarn
 
-  # Rodar a aplicação:
+  # Run the application:
   $ yarn start
 
-  # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+  # The application will start at port 3000 - access http://localhost:3000
 ```
 
-## :iphone: Iniciando mobile
+## :iphone: Starting the mobile application
 
 ```bash
-  # Entrar no diretório do mobile:
+  # Change to mobile directory:
   $ cd mobile
 
-  # Instalar as dependências:
+  # Install dependencies:
   $ yarn
 
-  # Rodar a aplicação:
+  # Run the application:
   $ yarn ios ou yarn android
 ```
 
-## 🦸 Autora
+## 🦸 Author
 
 <h4 align="center">
 
@@ -160,6 +159,6 @@ Configurar os dados do MongoDB, Postgres e Redis no arquivo ormconfig.json (cria
 
 <br/>
 
-Feito com ❤️ por Cintia Zago 👋🏽 [Entre em contato!](https://www.linkedin.com/in/cintiazago/)
+Made with ❤️ by Cintia Zago 👋🏽 [Contact me!](https://www.linkedin.com/in/cintiazago/)
 
 </h4>
